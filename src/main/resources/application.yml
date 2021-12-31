@@ -4,8 +4,32 @@ spring:
       client:
         registration:
           github:
-            client-id: <clientID>
-            client-secret: <clientSecret>
+            client-id: <client-id>
+            client-secret: <client-secret>
+  data:
+    cassandra:
+       keyspace-name: main
+       username: <username>
+       password: <password>
+       schema-action: create-if-not-exists
+       requests:
+        timeout: 30s
+       connection:
+        connect-timeout: 30s
+        init-query-timeout: 30s
+
+datastax.astra:
+  secure-connect-bundle: <test.zip>
+datastax-java-driver:
+  basic:
+    request:
+      timeout: 20s
+
+astra.db:
+  id: <id>
+  region: us-west1
+  keyspace: main
+  application.token: <token>
 
 server:
   port: 8081
